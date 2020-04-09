@@ -36,7 +36,7 @@ class Parser(report_sxw.rml_parse):
                     self.cr,
                     self.uid,
                     detail.bom_id,
-                    detail.product_id, factor / detail.quantity)[0]:
+                    detail.product_id, factor / detail.bom_id.product_qty)[0]:
                 uom_id = bom_line["product_uom"]
                 uom = obj_uom.browse(self.cr, self.uid, [uom_id])[0]
                 bom_line.update({"uom": uom.name})
