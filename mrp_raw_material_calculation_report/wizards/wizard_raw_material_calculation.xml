@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2020 OpenSynergy Indonesia
+     2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<openerp>
+    <data>
+
+        <record id="mrp_wizard_raw_material_calculation_form" model="ir.ui.view">
+            <field name="name">mrp.wizard_raw_material_calculation form</field>
+            <field name="model">mrp.wizard_raw_material_calculation</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml" >
+                <form>
+                    <group name="header" col="2" colspan="4">
+                        <field name="company_id"/>
+                        <field name="output_format"/>
+                    </group>
+                    <group name="detail" colspan="4" col="2">
+                        <field name="detail_ids" nolabel="1" mode="tree">
+                            <tree editable="top">
+                                <field name="product_id"/>
+                                <field name="allowed_bom_ids" widget="many2many_tags" invisible="1"/>
+                                <field name="bom_id" domain="[('id','in',allowed_bom_ids[0][2])]"/>
+                                <field name="quantity"/>
+                                <field name="allowed_uom_ids" widget="many2many_tags" invisible="1"/>
+                                <field name="uom_id" domain="[('id','in',allowed_uom_ids[0][2])]"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="button_print_report" string="Print" colspan="1" type="object" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="_Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="mrp_wizard_raw_material_calculation_action" model="ir.actions.act_window">
+            <field name="name">Print Raw Material Calculation</field>
+            <field name="res_model">mrp.wizard_raw_material_calculation</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="mrp_wizard_raw_material_calculation_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            id="mrp_wizard_raw_material_calculation_menu"
+            name="Raw Material Calculation"
+            parent="mrp.next_id_77"
+            action="mrp_wizard_raw_material_calculation_action"
+        />
+    </data>
+</openerp>
