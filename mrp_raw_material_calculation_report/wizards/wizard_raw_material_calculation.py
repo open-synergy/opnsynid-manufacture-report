@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -25,10 +25,8 @@ class WizardRawMaterialCalculation(models.TransientModel):
         string="Output Format",
         required=True,
         default="ods",
-        selection=[
-            ("xls", "XLS"),
-            ("ods", "ODS")
-        ])
+        selection=[("xls", "XLS"), ("ods", "ODS")],
+    )
     detail_ids = fields.One2many(
         string="Details",
         comodel_name="mrp.wizard_raw_material_calculation_detail",

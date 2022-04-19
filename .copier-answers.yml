@@ -1,0 +1,21 @@
+# Do NOT update manually; changes here will be overwritten by Copier
+_commit: edb24fc
+_src_path: gh:open-synergy/ssi-addons-repo-template
+dependency_installation_mode: OCA
+generate_requirements_txt: true
+include_aeroo_report: true
+include_wkhtmltopdf: true
+odoo_version: 8.0
+rebel_module_groups: []
+repo_description: opnsynid-manufacture-report
+repo_name: opnsynid-manufacture-report
+repo_slug: opnsynid-manufacture-report
+travis_apt_packages:
+  - python-lxml
+  - python-simplejson
+  - python-serial
+  - python-yaml
+  - python-cairo
+  - cups
+  - libcups2-dev
+travis_apt_sources: []

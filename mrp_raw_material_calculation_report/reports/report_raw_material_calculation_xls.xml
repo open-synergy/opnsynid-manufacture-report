@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2020 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
@@ -11,9 +11,13 @@
             <field name="report_name">report_raw_material_calculation_xls</field>
             <field name="report_type">aeroo</field>
             <field name="in_format">oo-ods</field>
-            <field name="out_format" ref="report_aeroo.report_mimetypes_xls_odt"/>
-            <field name="parser_loc">mrp_raw_material_calculation_report/reports/report_raw_material_calculation.py</field>
-            <field name="report_rml">mrp_raw_material_calculation_report/reports/report_raw_material_calculation.ods</field>
+            <field name="out_format" ref="report_aeroo.report_mimetypes_xls_odt" />
+            <field
+                name="parser_loc"
+            >mrp_raw_material_calculation_report/reports/report_raw_material_calculation.py</field>
+            <field
+                name="report_rml"
+            >mrp_raw_material_calculation_report/reports/report_raw_material_calculation.ods</field>
             <field name="parser_state">loc</field>
             <field name="tml_source">file</field>
         </record>
